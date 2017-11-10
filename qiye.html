@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>企业</title>
+	<link href="img/logo.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/qiye.css">
+</head>
+<body>
+	<header>
+		<div class="head">
+			<ul class="banner-box">
+				<li class="active"><a href="#"><img src="img/banner1.jpg" alt=""></a></li>
+				<li><a href="#"><img src="img/banner2.jpg" alt=""></a></li>
+				<li><a href="#"><img src="img/banner3.jpg" alt=""></a></li>
+			</ul>
+			<div class="head-top">
+				<a href="http://www.hzdec.cn/"><img src="img/f_48e2c371a96a1226433e0012389a9824.png" alt=""></a>
+				<div class="dianhua"><span>0571-88609180</span></div>
+				<div class="input">
+					<input name="words" value="" placeholder="" type="text">
+				</div>
+				<a class="sousuo">搜索
+				</a>
+			</div>
+			<div class="nav">
+				<a href="http://www.hzdec.cn/" class="nav1 zhu">首页</a>
+				<a href="https://haoyanni1215225.github.io/qiye1/qiye1.html" class="nav2" target="_blank">关于德创</a>
+				<a href="https://haoyanni1215225.github.io/qiye2/qiye2.html" class="nav3" target="_blank">行业解决方案</a>
+				<a href="" class="nav3">产品技术中心</a>
+				<a href="" class="nav2">客户案例</a>
+				<a href="https://haoyanni1215225.github.io/qiye3/qiye3.html" class="nav2" target="_blank">新闻中心</a>
+				<a href="https://haoyanni1215225.github.io/qiye4/qiye4.html" class="nav2" target="_blank">联系我们</a>
+			</div>
+			<div class="dian">
+				<div class="dian1 active"></div>
+				<div class="dian1"></div>
+				<div class="dian1 dian2" ></div>
+			</div>
+			<div class="head-bottom">
+				<div class="box1">
+					<div class="box1-top">
+						<span>行业解决方案</span>
+						<a href="">更多</a>
+					</div>
+					<div class="middle"></div>
+					<ul>
+						<li><a href="">机器人集成设计及服务能力</a></li>
+						<li><a href="">输送系统</a></li>
+						<li><a href="">智能化仓储</a></li>
+					</ul>	
+				</div>
+				<div class="box1">
+					<div class="box1-top">
+						<span>产品技术中心</span>
+						<a href="">更多</a>
+					</div>
+					<div class="middle"></div>
+					<ul>
+						<li><a href="">机器人集成设计及服务能力</a></li>
+						<li><a href="">输送系统</a></li>
+						<li><a href="">智能化仓储</a></li>
+					</ul>	
+				</div>
+				<div class="box1">
+					<div class="box1-top">
+						<span>成功案例</span>
+						<a href="">更多</a>
+					</div>
+					<div class="middle"></div>
+					<ul>
+						<li><a href="">浙江电力</a></li>
+						<li><a href="">辽宁电力</a></li>
+						<li><a href="">贵州电力</a></li>
+					</ul>	
+				</div>
+				<div class="box1">
+					<div class="box1-top">
+						<span>新闻中心</span>
+						<a href="">更多</a>
+					</div>
+					<div class="middle"></div>
+					<ul>
+						<li><a href="">机器人集成设计及服务能力</a></li>
+						<li><a href="">输送系统</a></li>
+						<li><a href="">智能化仓储</a></li>
+					</ul>	
+				</div>
+			</div>
+		</div>
+	</header>
+	<footer>
+		<div class="foot">
+			<span>版权所有 Copyright © 2015杭州德创电子股份有限公司 浙ICP备15043781号</span>
+			<div class="foot-you"><a href="">关于我们</a>
+			|
+			<a href="">联系我们</a>
+			|
+			<a href="">网站地图</a>
+			|
+			</div>
+		</div>
+	</footer>
+</body>
+<script>
+	let dians=document.querySelectorAll('.dian div');
+	let imgs=document.querySelectorAll('.banner-box li');
+	let now=0;
+	dians.forEach(function(ele,index){
+		ele.onclick=function(){
+			for(let i=0;i<dians.length;i++){
+				dians[i].classList.remove('active');
+				imgs[i].classList.remove('active');
+			}
+			ele.classList.add("active");
+			imgs[index].classList.add("active");
+			now=index;
+		}
+	});
+	let st=setInterval(fn,2000);
+	function fn(dir="r"){
+		if(dir==="r"){
+			now++;
+			if(now==dians.length){
+			now=0;
+			}
+		}else if(dir==="l"){
+			now--;
+			if(now===-1){
+				now=dians.length-1;
+			}
+		}
+		
+		for(let i=0;i<dians.length;i++){
+			dians[i].classList.remove('active');
+			imgs[i].classList.remove('active');
+		}
+		dians[now].classList.add("active");
+		imgs[now].classList.add("active");
+	};
+</script>
+</html>
